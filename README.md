@@ -14,30 +14,9 @@
 2. Create a `DockerFile` in your project folder. Copy paste the below contents to you `DockerFile`
 
   ```
-  FROM ubuntu:18.04
+  FROM abhiswain97/libtorch-cpu
 
-  RUN apt-get update 
-  RUN apt-get install -y gcc g++ build-essential libssl-dev cmake wget unzip python3-dev git
-
-  ARG path=libtorch-cxx11-abi-shared-with-deps-1.8.1+cpu
-
-  RUN wget --no-check-certificate https://download.pytorch.org/libtorch/cpu/libtorch-cxx11-abi-shared-with-deps-1.8.1%2Bcpu.zip \
-      && unzip ${path}.zip \
-      && rm -r ${path}.zip
-
-  RUN mkdir src && mkdir throwaway
-
-  RUN git clone https://github.com/Abhiswain97/libtorch-cpu-docker.git \
-      && cp /libtorch-cpu-docker/create_CMakeLists.py /src \
-      && rm -r /libtorch-cpu-docker
-
-  COPY ./src /throwaway
-
-  RUN [ -f /throwaway/*.cpp ] && cp /throwaway/*.cpp /src 
-
-  RUN [ -f /throwaway/*.h ] && cp /throwaway/*.h /src 
-
-  RUN rm -r /throwaway
+  COPY ./src /src
 
   WORKDIR /src
 
