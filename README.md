@@ -3,15 +3,15 @@
 1. Your project folder structure should be:
 
   ```
-  |   DockerFile
+  | DockerFile
   |
   \---src
           test.cpp
           test.h
   ```
-    Here, `src` folder contains your `.h` and `.cpp` files.
+2. Create an `src` folder, put all your `.h` and `.cpp` files in this folder.
 
-2. Create a `DockerFile` in your project folder. Copy paste the below contents to you `DockerFile`
+3. Create a `DockerFile` in your project folder. Copy paste the below contents to you `DockerFile`
 
   ```
   FROM abhiswain97/libtorch-cpu
@@ -32,8 +32,8 @@
 
   ```
   
-3. Build the container: `docker build -f DockerFile -t my-app .`
+4. Build the container: `docker build -f DockerFile -t my-app .`
 
-4. After build finishes, run the container: `docker run -it my-app`
+5. After build finishes, run the container: `docker run -it my-app`
 
-5. And voila! your libtorch code runs! 
+6. And voila! your libtorch code runs! 
