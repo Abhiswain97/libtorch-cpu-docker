@@ -31,7 +31,7 @@
       && cp /libtorch-cpu-docker/create_CMakeLists.py /src \
       && rm -r /libtorch-cpu-docker
 
-  COPY . /throwaway
+  COPY ./src /throwaway
 
   RUN [ -f /throwaway/*.cpp ] && cp /throwaway/*.cpp /src 
 
