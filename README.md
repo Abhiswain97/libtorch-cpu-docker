@@ -36,4 +36,4 @@
 
 5. After build finishes, run the container: `docker run -it my-app`
 
-5. And voila! your libtorch code runs! 
+6. And voila! your libtorch code runs! 
