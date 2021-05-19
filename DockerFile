@@ -12,25 +12,13 @@ RUN wget --no-check-certificate https://download.pytorch.org/libtorch/cpu/libtor
 RUN mkdir src && mkdir throwaway
 
 RUN git clone https://github.com/Abhiswain97/libtorch-cpu-docker.git \
-    && cp /libtorch-cpu-docker/create_CMakeLists.py /src \
+    && cp /libtorch-cpu-docker/create_CMakeLists.py /libtorch-cpu-docker/build_and_run.sh /src \
     && rm -r /libtorch-cpu-docker
 
-COPY . /throwaway
-
-RUN [ -f /throwaway/*.cpp ] && cp /throwaway/*.cpp /src 
-
-RUN [ -f /throwaway/*.h ] && cp /throwaway/*.h /src 
-
-RUN rm -r /throwaway
+COPY ./src /src
 
 WORKDIR /src
 
-RUN /bin/bash -c "python3 create_CMakeLists.py"
-
-RUN /bin/bash -c "apt install make && mkdir build"
-
-WORKDIR /src/build
-
-RUN /bin/bash -c "cmake -DCMAKE_PREFIX_PATH=/libtorch .. && make"
+RUN /bin/bash -c "./run.sh"
 
 CMD [ "./run" ]
