@@ -1,5 +1,8 @@
 FROM ubuntu:18.04
 
+LABEL authour="Abhishek Swain"
+LABEL mail="abhiswain.it.2016@gmail.com"
+
 RUN apt-get update 
 RUN apt-get install -y gcc g++ build-essential libssl-dev cmake wget unzip python3-dev git
 
