@@ -42,10 +42,30 @@
 
 > You can check the complete DockerFile at: [DockerFile](DockerFile)
 
-## Testing with docker-compose
+## Example with docker-compose
 
 1. Clone the repo: `git clone https://github.com/Abhiswain97/libtorch-cpu-docker.git`
 
 2. `cd libtorch-cpu-docker`
 
 3. Do, `docker-compose up`
+
+4. If all goes well, then you shoud see:
+
+  ```
+  (base) C:\Users\abhi0\Desktop\libtorch-cpu-docker\example>docker compose up
+  [+] Running 1/1
+  - Container example_libtorch-service_1  Recreated                                                                                                    0.1s 
+  Attaching to libtorch-service_1
+  libtorch-service_1  |  1  0  0  0  0  0  0  0  0  0
+  libtorch-service_1  |  0  1  0  0  0  0  0  0  0  0
+  libtorch-service_1  |  0  0  1  0  0  0  0  0  0  0
+  libtorch-service_1  |  0  0  0  1  0  0  0  0  0  0
+  libtorch-service_1  |  0  0  0  0  1  0  0  0  0  0
+  libtorch-service_1  |  0  0  0  0  0  1  0  0  0  0
+  libtorch-service_1  |  0  0  0  0  0  0  1  0  0  0
+  libtorch-service_1  |  0  0  0  0  0  0  0  1  0  0
+  libtorch-service_1  |  0  0  0  0  0  0  0  0  1  0
+  libtorch-service_1  |  0  0  0  0  0  0  0  0  0  1
+  libtorch-service_1 exited with code 0
+  ```
