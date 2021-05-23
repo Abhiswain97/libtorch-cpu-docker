@@ -44,9 +44,12 @@
 
 ## Example with docker-compose
 
-1. Clone the repo: `git clone https://github.com/Abhiswain97/libtorch-cpu-docker.git`
-
-2. `cd libtorch-cpu-docker`
+1. Clone the repo: 
+  ```
+  git clone https://github.com/Abhiswain97/libtorch-cpu-docker.git 
+  cd libtorch-cpu-docker
+  cd test
+  ```
 
 3. Do, `docker-compose up`
 
