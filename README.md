@@ -1,5 +1,7 @@
 # libtorch-cpu-docker
 
+## How to use
+
 1. Your project folder structure should be:
 
   ```
@@ -39,3 +41,11 @@
 6. And voila! your libtorch code runs! 
 
 > You can check the complete DockerFile at: [DockerFile](DockerFile)
+
+## Testing with docker-compose
+
+1. Clone the repo: `git clone https://github.com/Abhiswain97/libtorch-cpu-docker.git`
+
+2. `cd libtorch-cpu-docker`
+
+3. Do, `docker-compose up`
