@@ -38,7 +38,7 @@
 
 5. After build finishes, run the container: `docker run -it my-app`
 
-6. And voila! your libtorch code runs! 
+6. And voila! your libtorch code runs! You should see:
 
 > You can check the complete DockerFile at: [DockerFile](DockerFile)
 
