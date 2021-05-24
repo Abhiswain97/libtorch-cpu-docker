@@ -51,9 +51,9 @@
   cd test
   ```
 
-3. Do, `docker-compose up`
+2. Do, `docker-compose up`
 
-4. If all goes well, then you shoud see:
+3. If all goes well, then you shoud see:
 
   ```
   (base) C:\Users\abhi0\Desktop\libtorch-cpu-docker\example>docker compose up
