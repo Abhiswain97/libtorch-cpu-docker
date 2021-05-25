@@ -13,7 +13,7 @@
   ```
 2. Create an `src` folder, put all your `.h` and `.cpp` files in this folder.
 
-3. Create a `DockerFile` in your project folder. Copy paste the below contents to you `DockerFile`
+3. Create a `DockerFile` in your project folder. Copy paste the below contents to you `DockerFile`. If you know a little bit about Docker then, you can customize the below contents. One example can be, if you have extra folders for `model` and `data` then you can simply copy them to the Docker container also. That would just be 2 - 3 lines more
 
   ```
   FROM abhiswain97/libtorch-cpu
