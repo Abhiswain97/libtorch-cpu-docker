@@ -145,3 +145,54 @@
   libtorch-service_1 exited with code 0
   ```
 
+### With `Makefile`
+
+1. Clone the repo: 
+  ```
+  git clone https://github.com/Abhiswain97/libtorch-cpu-docker.git 
+  cd libtorch-cpu-docker
+  cd test
+  ```
+
+2. Do, `make name=<your-target-name>`
+  
+    eg: `make name=my-app`
+
+3. If all goes well, then you shoud see:
+
+  ```
+  docker build -f Dockerfile -t app .
+  [+] Building 3.3s (13/13) FINISHED
+  => [internal] load build definition from Dockerfile                                                                                              0.0s 
+  => => transferring dockerfile: 32B                                                                                                               0.0s 
+  => [internal] load .dockerignore                                                                                                                 0.0s 
+  => => transferring context: 2B                                                                                                                   0.0s 
+  => [internal] load metadata for docker.io/abhiswain97/libtorch-cpu:latest                                                                        3.1s 
+  => [auth] abhiswain97/libtorch-cpu:pull token for registry-1.docker.io                                                                           0.0s 
+  => [internal] load build context                                                                                                                 0.0s 
+  => => transferring context: 85B                                                                                                                  0.0s 
+  => [1/7] FROM docker.io/abhiswain97/libtorch-cpu@sha256:bf7a7e8bbb32f76bc311720f0c4cec93d74469142c7800637161c70169645fd9                         0.0s 
+  => CACHED [2/7] COPY ./src /src                                                                                                                  0.0s 
+  => CACHED [3/7] WORKDIR /src                                                                                                                     0.0s 
+  => CACHED [4/7] RUN /bin/bash -c "python3 create_CMakeLists.py"                                                                                  0.0s 
+  => CACHED [5/7] RUN /bin/bash -c "apt install make && mkdir build"                                                                               0.0s 
+  => CACHED [6/7] WORKDIR /src/build                                                                                                               0.0s 
+  => CACHED [7/7] RUN /bin/bash -c "cmake -DCMAKE_PREFIX_PATH=/libtorch .. && make"                                                                0.0s 
+  => exporting to image                                                                                                                            0.1s 
+  => => exporting layers                                                                                                                           0.0s 
+  => => writing image sha256:e9d05d07009936f76611e624d8edbf6809534ddda2a703cff3f34f5506434cdc                                                      0.0s 
+  => => naming to docker.io/library/app                                                                                                            0.0s 
+  docker run -it app
+  1  0  0  0  0  0  0  0  0  0
+  0  1  0  0  0  0  0  0  0  0
+  0  0  1  0  0  0  0  0  0  0
+  0  0  0  1  0  0  0  0  0  0
+  0  0  0  0  1  0  0  0  0  0
+  0  0  0  0  0  1  0  0  0  0
+  0  0  0  0  0  0  1  0  0  0
+  0  0  0  0  0  0  0  1  0  0
+  0  0  0  0  0  0  0  0  1  0
+  0  0  0  0  0  0  0  0  0  1
+  [ CPUFloatType{10,10} ]
+  ```
+
