@@ -50,7 +50,7 @@
   ```
   git clone https://github.com/Abhiswain97/libtorch-cpu-docker.git 
   cd libtorch-cpu-docker
-  cd test
+  cd example
   ```
   
 2. Do, `docker build -f Dockerfile -t my-app .`
@@ -120,7 +120,7 @@
   ```
   git clone https://github.com/Abhiswain97/libtorch-cpu-docker.git 
   cd libtorch-cpu-docker
-  cd test
+  cd example
   ```
 
 2. Do, `docker-compose up`
@@ -151,7 +151,7 @@
   ```
   git clone https://github.com/Abhiswain97/libtorch-cpu-docker.git 
   cd libtorch-cpu-docker
-  cd test
+  cd example
   ```
 
 2. Do, `make name=<your-target-name>`
